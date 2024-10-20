@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator!</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>Age Calculator!</h1>
+        <label>Enter Birth Year:</label>
+        <br>
+        <input type="number" placeholder="Birth_year" id="Birth">
+        <br><br>
+        <label>Enter Current Year:</label>
+        <br>
+        <input type="number" placeholder="Current_year" id="Current">
+        <br><br>
+        <button onclick="input()">Click Here !</button>
+
+        <p id="show"></p>
+    </div>
+
+    <!-- JS functionality start -->
+
+    <script>
+        function input() {
+            let birth_year = document.getElementById("Birth").value;
+            let current_year = document.getElementById("Current").value;
+            let output = current_year - birth_year;
+            if (birth_year === "" || current_year === "") {
+                alert("Please fill in both fields!");
+
+            } else if (birth_year > current_year) {
+                document.getElementById("show").innerHTML = `<b>Please input valid year!</b>`;
+            }
+            else {
+                document.getElementById("show").innerHTML = `<b>You are ${output} years Old!`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
